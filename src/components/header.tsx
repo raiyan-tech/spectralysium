@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { SiteLogo } from './site-logo';
 import { Button } from './ui/button';
+import { ThemeToggle } from './theme-toggle';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -55,7 +56,8 @@ export function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
+          <ThemeToggle />
           <Button variant="ghost" size="sm">
             EN
           </Button>
@@ -79,7 +81,8 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4 flex gap-x-4">
+            <div className="mt-4 flex gap-x-4 items-center">
+              <ThemeToggle />
               <Button variant="ghost" size="sm" className="flex-1">
                 EN
               </Button>
