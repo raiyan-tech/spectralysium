@@ -8,10 +8,15 @@ import { motion } from 'framer-motion';
 export function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-32 lg:py-40">
-      {/* Animated gradient orbs */}
+      {/* Concentric circles background - inspired by logo */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 bg-[#00E5FF] opacity-20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 bg-[#FF3FD1] opacity-20 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute h-[800px] w-[800px] rounded-full border border-slate-700/20 animate-pulse" style={{ animationDuration: '8s' }} />
+          <div className="absolute h-[600px] w-[600px] top-[100px] left-[100px] rounded-full border border-slate-600/20 animate-pulse" style={{ animationDuration: '6s' }} />
+          <div className="absolute h-[400px] w-[400px] top-[200px] left-[200px] rounded-full border border-slate-500/20 animate-pulse" style={{ animationDuration: '4s' }} />
+        </div>
+        <div className="absolute top-1/4 right-1/4 h-96 w-96 bg-slate-400/10 opacity-20 blur-[120px] rounded-full" />
+        <div className="absolute bottom-1/3 left-1/3 h-80 w-80 bg-slate-300/10 opacity-15 blur-[100px] rounded-full" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -23,7 +28,7 @@ export function Hero() {
         >
           <h1 className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
             Build worlds.{' '}
-            <span className="bg-gradient-to-r from-[#00E5FF] via-[#FF3FD1] to-[#FFB800] bg-clip-text text-transparent">
+            <span className="metallic-shine font-bold">
               Train models.
             </span>{' '}
             Ship stories.
